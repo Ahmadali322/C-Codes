@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double c;
+    bool redo;
+    while (true) {
+        do {
+            cout << "Enter how many max * diamond to draw - ";
+            cin >> c;
+            if(c < 1) {
+                cout << "Enter a value above 0 and an Odd number\n";
+                redo = 1;
+            } else if ((int)c % 2 == 0) {
+                cout << "Enter an Odd number\n";
+                redo = true;
+            } else {
+               redo = false; 
+            }
+        } while(redo);
+        for(int i = 1;i <= c; i++) {
+            // int space = 0, ospace = 0;
+            for (int j = c; j > (i/2); j--) {
+                cout << " ";
+                // if (ospace % 2 ==1) {
+                //     if (space % 2 ==1) {
+                //         cout << " ";
+                //         space++;
+                //     }else {
+                //         space++;
+                //     }
+                // }else {
+                //     ospace++;
+                // }
+            }
+            for (int j = 0; j < i; j++) {
+                cout << "*";
+            }
+            cout << "\n";
+        }
+        for(int i = c-1; i > 0; i--) {
+            for (int j = c; j > (i/2); j--) {
+                cout << " ";
+            }
+            for (int j = 0; j < i; j++) {
+                cout << "*";
+            }
+            cout << "\n";
+        }
+    }
+}
